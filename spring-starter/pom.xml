@@ -7,6 +7,63 @@
 	<groupId>com.workingtheory.babysteps</groupId>
 	<artifactId>spring-starter</artifactId>
 	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
 
+	<name>Spring Starter</name>
+
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+	</build>
+
+	<!-- Project properties -->
+
+	<properties>
+
+		<!-- Framework version properties -->
+
+		<log4j.version>2.6.2</log4j.version>
+		<lmax.version>3.3.5</lmax.version>
+
+		<junit.version>4.12</junit.version>
+
+		<!-- Compiler properties -->
+
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+	</properties>
+
+	<dependencies>
+
+		<!-- Log4j 2 -->
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.lmax</groupId>
+			<artifactId>disruptor</artifactId>
+			<version>${lmax.version}</version>
+		</dependency>
+
+		<!-- Unit testing -->
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
 
 </project>

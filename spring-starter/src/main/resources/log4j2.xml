@@ -5,7 +5,7 @@
 
 	<Properties>
 		<Property name="Context.Name">spring-starter</Property>
-		<Property name="Log.Dir">../logs</Property>
+		<Property name="Log.Dir">.</Property>
 		<Property name="Log.File">${Log.Dir}/${Context.Name}.log</Property>
 		<Property name="Log.Pattern">%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{45} : %msg%n</Property>
 	</Properties>
