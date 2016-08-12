@@ -11,6 +11,6 @@ public class SpringTest
 	@Test
 	public void testHelloWorld()
 	{
-
+		logger.info("Hello World .. ");
 	}
 }
