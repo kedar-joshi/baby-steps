@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="60">
+
+	<!-- Logging properties -->
+
+	<Properties>
+		<Property name="Context.Name">spring-starter</Property>
+		<Property name="Log.Dir">../logs</Property>
+		<Property name="Log.File">${Log.Dir}/${Context.Name}.log</Property>
+		<Property name="Log.Pattern">%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{45} : %msg%n</Property>
+	</Properties>
+
+	<!-- Appender configuration -->
+
+	<Appenders>
+
+		<!-- Console appender -->
+
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="${Log.Pattern}"/>
+		</Console>
+
+		<!-- Rolling file appender -->
+
+		<RollingFile name="File" fileName="${Log.File}" filePattern="${Log.File}.%d{yyyy-MM-dd}%i.gz">
+			<PatternLayout>
+				<Pattern>${Log.Pattern}</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy/>
+				<SizeBasedTriggeringPolicy size="100 MB"/>
+			</Policies>
+			<DefaultRolloverStrategy max="10"/>
+		</RollingFile>
+
+	</Appenders>
+
+	<!-- Logger configuration -->
+
+	<Loggers>
+		<AsyncRoot level="INFO">
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref="File"/>
+		</AsyncRoot>
+	</Loggers>
+
+
+</Configuration>
