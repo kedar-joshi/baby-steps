@@ -16,6 +16,7 @@
 		<module>parent</module>
 		<module>logging</module>
 		<module>logging-extras</module>
+		<module>hello-activemq</module>
 	</modules>
 
 </project>

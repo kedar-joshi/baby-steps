@@ -53,6 +53,8 @@
 		<lmax.version>3.3.6</lmax.version>
 		<slf4j.version>1.7.21</slf4j.version>
 
+		<activemq.version>5.14.1</activemq.version>
+
 		<!-- Provided dependencies -->
 
 		<!-- Testing dependencies -->
@@ -86,6 +88,22 @@
 	<dependencyManagement>
 
 		<dependencies>
+
+			<!-- Module dependencies -->
+
+			<dependency>
+				<groupId>com.workingtheory.babysteps</groupId>
+				<artifactId>logging</artifactId>
+				<version>${project.version}</version>
+				<type>pom</type>
+			</dependency>
+
+			<dependency>
+				<groupId>com.workingtheory.babysteps</groupId>
+				<artifactId>logging-extras</artifactId>
+				<version>${project.version}</version>
+				<type>pom</type>
+			</dependency>
 
 			<!-- Common dependencies -->
 
@@ -157,8 +175,30 @@
 				<version>${log4j.version}</version>
 			</dependency>
 
+			<!-- ActiveMQ -->
+
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-broker</artifactId>
+				<version>${activemq.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-client</artifactId>
+				<version>${activemq.version}</version>
+
+				<exclusions>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>slf4j-api</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
 		</dependencies>
 
 	</dependencyManagement>
+
 
 </project>
