@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.workingtheory.babysteps</groupId>
+        <artifactId>logging</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>logging-extras</artifactId>
+
+	<name>Logging Extras</name>
+	<description>The additional parent for additional logging dependencies like Log4j bridges to other logging frameworks</description>
+
+	<!-- Project properties -->
+
+	<properties>
+
+		<!-- Framework version properties -->
+
+		<!-- Common dependencies -->
+
+		<!-- Provided dependencies -->
+
+		<!-- Testing dependencies -->
+
+	</properties>
+
+	<dependencies>
+
+		<!-- SLF4J configuration -->
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<!-- Log4j 2 - SLF4J bridge -->
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+
+		</dependency>
+
+		<!-- Log4j 2 - Log4j 1.x bridge -->
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-1.2-api</artifactId>
+		</dependency>
+
+		<!-- Log4j 2 - Commons logging bridge -->
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-jcl</artifactId>
+		</dependency>
+
+		<!-- Log4j 2 - Java util logging bridge -->
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-jul</artifactId>
+		</dependency>
+
+
+	</dependencies>
+
+</project>
