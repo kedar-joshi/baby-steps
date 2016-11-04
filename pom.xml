@@ -17,6 +17,8 @@
 		<module>logging</module>
 		<module>logging-extras</module>
 		<module>hello-activemq</module>
+		<module>hello-hazelcast</module>
+		<module>hello-kafka</module>
 	</modules>
 
 </project>

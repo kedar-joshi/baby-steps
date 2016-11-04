@@ -54,6 +54,8 @@
 		<slf4j.version>1.7.21</slf4j.version>
 
 		<activemq.version>5.14.1</activemq.version>
+		<hazelcast.version>3.7.2</hazelcast.version>
+		<kafka.version>0.10.1.0</kafka.version>
 
 		<!-- Provided dependencies -->
 
@@ -200,6 +202,28 @@
 				<groupId>org.apache.activemq</groupId>
 				<artifactId>activemq-kahadb-store</artifactId>
 				<version>${activemq.version}</version>
+			</dependency>
+
+			<!-- Hazelcast -->
+
+			<dependency>
+				<groupId>com.hazelcast</groupId>
+				<artifactId>hazelcast</artifactId>
+				<version>${hazelcast.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.hazelcast</groupId>
+				<artifactId>hazelcast-client</artifactId>
+				<version>${hazelcast.version}</version>
+			</dependency>
+
+			<!-- Kafka -->
+
+			<dependency>
+				<groupId>org.apache.kafka</groupId>
+				<artifactId>kafka-clients</artifactId>
+				<version>${kafka.version}</version>
 			</dependency>
 
 		</dependencies>
