@@ -20,7 +20,7 @@ import java.io.Serializable;
 /**
  * This class demonstrates a single-class implementation of simple ActiveMQ message consumers.
  *
- * @param <T> Generic type argument for ActiveMQ messages consumer by this consumer implementation.
+ * @param <T> Generic type argument for ActiveMQ messages consumed by this consumer implementation.
  *            Type T must be an instance of {@link Serializable}.
  */
 public class SimpleActiveMQConsumer<T extends Serializable>
@@ -44,7 +44,7 @@ public class SimpleActiveMQConsumer<T extends Serializable>
 	 * 2. <a href="http://activemq.apache.org/failover-transport-reference.html">Failover transports</a>
 	 *
 	 * @param brokerURL A valid URL to connect to ActiveMQ broker.
-	 * @param queueName An alpha-numeric name of the ActiveMQ queue, con which consumer will be listening.
+	 * @param queueName An alpha-numeric name of the ActiveMQ queue, on which consumer will be listening.
 	 */
 	public SimpleActiveMQConsumer(String brokerURL, String queueName)
 	{
@@ -53,7 +53,7 @@ public class SimpleActiveMQConsumer<T extends Serializable>
 	}
 
 	/**
-	 * Initializes connection factory, connection, session, queue and message producer instances.
+	 * Initializes connection factory, connection, session, message queue and message producer instances.
 	 *
 	 * @throws JMSException when -
 	 *                      1. The broker URL format is incorrect.

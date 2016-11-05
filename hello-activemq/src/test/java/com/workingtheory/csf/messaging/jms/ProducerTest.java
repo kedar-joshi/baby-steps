@@ -1,5 +1,5 @@
-import com.workingtheory.csf.messaging.jms.ActiveMQProducer;
-import com.workingtheory.csf.messaging.jms.JMSUtil;
+package com.workingtheory.csf.messaging.jms;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.AfterClass;
@@ -20,7 +20,7 @@ public class ProducerTest
 	public static void initialize() throws JMSException
 	{
 		// Creating producer instance
-		producer = new ActiveMQProducer<>(brokerURL, "producer-queue");
+		producer = new ActiveMQProducer<>(BaseTest.brokerURL, "producer-queue");
 
 		// Starting producer
 		producer.start();
@@ -29,7 +29,6 @@ public class ProducerTest
 	@Test
 	public void testProducer() throws JMSException
 	{
-
 		producer.send(UUID.randomUUID().toString());
 	}
 

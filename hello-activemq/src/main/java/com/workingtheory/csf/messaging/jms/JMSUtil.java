@@ -10,7 +10,6 @@ import javax.jms.MessageConsumer;
 import javax.jms.MessageProducer;
 import javax.jms.ObjectMessage;
 import javax.jms.Session;
-import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +17,7 @@ public abstract class JMSUtil
 {
 	private static final Logger logger = LoggerFactory.getLogger(JMSUtil.class);
 
-	public static void close(Closeable closeable)
+	public static void close(AutoCloseable closeable)
 	{
 		if (closeable != null)
 		{
