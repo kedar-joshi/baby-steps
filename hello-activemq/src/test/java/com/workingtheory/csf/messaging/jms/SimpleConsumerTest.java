@@ -14,13 +14,13 @@ public class SimpleConsumerTest
 {
 	private static final Logger logger = LogManager.getLogger(SimpleConsumerTest.class);
 
-	private static ActiveMQConsumer<String> consumer;
+	private static SimpleActiveMQConsumer<String> consumer;
 
 	@BeforeClass
 	public static void initialize() throws JMSException
 	{
 		// Creating consumer instance
-		consumer = new ActiveMQConsumer<>(BaseTest.brokerURL, "producer-queue");
+		consumer = new SimpleActiveMQConsumer<>(BaseTest.brokerURL, "producer-queue");
 
 		// Starting consumer
 		consumer.start();

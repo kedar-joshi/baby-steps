@@ -1,6 +1,5 @@
 package com.workingtheory.csf.messaging.jms;
 
-import org.apache.activemq.command.ActiveMQTextMessage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -105,6 +104,11 @@ public class ActiveMQConsumer<T extends Serializable>
 					final TextMessage textMessage = (TextMessage) message;
 					logger.info("Received :: {}", textMessage.getText());
 				}
+				else
+				{
+					final ObjectMessage objectMessage = (ObjectMessage) message;
+					logger.info("Received :: {}", objectMessage.getObject());
+				}
 			}
 			catch (IllegalStateException e)
 			{
@@ -116,61 +120,6 @@ public class ActiveMQConsumer<T extends Serializable>
 			}
 		}
 	}
-
-	/**
-	 * Tries to receive a message from the consumer without waiting for one in case of an empty queue.
-	 *
-	 * @return object of type T by transforming {@link Message} according to its underlying implementation.
-	 *
-	 * @throws JMSException when -
-	 *                      1. The consumer or its corresponding session is closed.
-	 *                      2. The broker is down and connection factory is not configured with 'failover' option.
-	 */
-	public T nextMessageNoWait() throws JMSException
-	{
-		return transform(consumer.receiveNoWait());
-	}
-
-	/**
-	 * Tries to receive a message from the consumer, if one is readily available.
-	 * If not, consumer will wait for the amount of time specified by the 'timeout' parameter.
-	 *
-	 * @param timeout in milliseconds for which a broker will wait for a message to arrive,
-	 *                in case when one is not readily available in the queue.
-	 *
-	 * @return object of type T by transforming {@link Message} according to its underlying implementation.
-	 *
-	 * @throws JMSException when -
-	 *                      1. The consumer or its corresponding session is closed.
-	 *                      2. The broker is down and connection factory is not configured with 'failover' option.
-	 */
-	public T nextMessage(long timeout) throws JMSException
-	{
-		return transform(consumer.receive(timeout));
-	}
-
-	/**
-	 * Transforms {@link Message} according to its underlying implementation.
-	 * {@link TextMessage} is transformed into {@link String} object,
-	 * while {@link ObjectMessage} is transformed to its embedded object.
-	 *
-	 * @param message to transformed.
-	 *
-	 * @return object of type T as the result of transformation of 'message' parameter.
-	 *
-	 * @throws JMSException when transformation is not possible.
-	 */
-	@SuppressWarnings("unchecked")
-	private T transform(Message message) throws JMSException
-	{
-		if (message == null)
-		{
-			return null;
-		}
-
-		return (T) (message instanceof ActiveMQTextMessage ? ((ActiveMQTextMessage) message).getText() : ((ObjectMessage) message).getObject());
-	}
-
 
 	/**
 	 * Closes all the resources held by this instance of message consumer.

@@ -14,13 +14,13 @@ public class SimpleProducerTest
 {
 	private static final Logger logger = LogManager.getLogger(ProducerTest.class);
 
-	private static ActiveMQProducer<String> producer;
+	private static SimpleActiveMQProducer<String> producer;
 
 	@BeforeClass
 	public static void initialize() throws JMSException
 	{
 		// Creating producer instance
-		producer = new ActiveMQProducer<>(brokerURL, "producer-queue");
+		producer = new SimpleActiveMQProducer<>(brokerURL, "producer-queue");
 
 		// Starting producer
 		producer.start();

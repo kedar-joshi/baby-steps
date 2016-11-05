@@ -29,7 +29,10 @@ public class ProducerTest
 	@Test
 	public void testProducer() throws JMSException
 	{
-		producer.send(UUID.randomUUID().toString());
+		for (int i = 0; i < 10; i++)
+		{
+			producer.send(UUID.randomUUID().toString());
+		}
 	}
 
 	@AfterClass
