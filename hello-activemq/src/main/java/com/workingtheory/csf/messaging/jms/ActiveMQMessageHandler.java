@@ -2,12 +2,16 @@ package com.workingtheory.csf.messaging.jms;
 
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.activemq.command.ActiveMQTextMessage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.ObjectMessage;
 import javax.jms.Queue;
 import javax.jms.Session;
+import javax.jms.TextMessage;
 
 /**
  * This class defines common properties and behaviour for its implementations
@@ -99,6 +103,23 @@ public abstract class ActiveMQMessageHandler
 
 		// Creating queue instance corresponding to queueName
 		queue = session.createQueue(queueName);
+	}
+
+	/**
+	 * Transforms a non {@code null} {@link Message} according to its underlying implementation.
+	 * {@link TextMessage} is transformed into {@link String} object,
+	 * while {@link ObjectMessage} is transformed to its embedded object.
+	 *
+	 * @param message to transformed.
+	 *
+	 * @return object of type T as the result of transformation of 'message' parameter.
+	 *
+	 * @throws JMSException when transformation is not possible.
+	 */
+	@SuppressWarnings("unchecked")
+	protected  <T> T transform(Message message) throws JMSException
+	{
+		return (T) (message instanceof ActiveMQTextMessage ? ((ActiveMQTextMessage) message).getText() : ((ObjectMessage) message).getObject());
 	}
 
 	/**
