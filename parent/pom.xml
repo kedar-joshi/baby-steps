@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -56,6 +57,7 @@
 		<activemq.version>5.14.1</activemq.version>
 		<hazelcast.version>3.7.2</hazelcast.version>
 		<kafka.version>0.10.1.0</kafka.version>
+		<postgresql.jdbc.version>9.4-1206-jdbc42</postgresql.jdbc.version>
 		<cassandra.driver.version>3.1.2</cassandra.driver.version>
 
 		<!-- Provided dependencies -->
@@ -225,6 +227,12 @@
 				<groupId>org.apache.kafka</groupId>
 				<artifactId>kafka-clients</artifactId>
 				<version>${kafka.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>${postgresql.jdbc.version}</version>
 			</dependency>
 
 			<!-- Cassandra -->

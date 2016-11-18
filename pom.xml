@@ -21,6 +21,7 @@
 		<module>hello-hazelcast</module>
 		<module>hello-kafka</module>
 		<module>hello-cassandra</module>
+		<module>hello-java</module>
 	</modules>
 
 </project>

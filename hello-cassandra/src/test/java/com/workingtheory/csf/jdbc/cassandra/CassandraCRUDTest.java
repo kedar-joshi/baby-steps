@@ -32,7 +32,8 @@ public class CassandraCRUDTest
 	@BeforeClass
 	public static void initialize()
 	{
-		cluster = Cluster.builder().addContactPoint("192.168.220.7").withPort(9042).build();
+		// cluster = Cluster.builder().addContactPoint("192.168.220.7").withPort(9042).build();
+		cluster = Cluster.builder().addContactPoint("localhost").withPort(9042).build();
 		session = cluster.connect();
 
 		// Cleaning up
