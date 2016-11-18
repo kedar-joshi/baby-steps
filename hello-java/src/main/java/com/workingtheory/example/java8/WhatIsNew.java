@@ -126,6 +126,7 @@ public class WhatIsNew
 		Optional<Integer> optional2 = getOptional(10);
 
 		if (optional2.isPresent())
+
 		{
 			logger.info("Result : {}", optional2.get());
 		}
