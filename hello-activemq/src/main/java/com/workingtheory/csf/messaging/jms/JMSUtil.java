@@ -119,6 +119,7 @@ public abstract class JMSUtil
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public static <T> List<T> toObjectList(List<Message> messageList) throws JMSException
 	{
 		List<T> objectList = new ArrayList<T>(messageList.size());
