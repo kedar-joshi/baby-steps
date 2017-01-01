@@ -4,7 +4,9 @@ Repository for sample Java projects, exploring various technologies .. suitable 
 
 ### Roadmap -
  
+ - Hello Scala
  - Hello Akka
+ - Hello Kafka
  - Hello Hazelcast
  - Hello Spring Boot
  - Hello Thymeleaf
