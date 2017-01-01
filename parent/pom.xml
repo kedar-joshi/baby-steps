@@ -52,11 +52,11 @@
 
 		<log4j.version>2.7</log4j.version>
 		<lmax.version>3.3.6</lmax.version>
-		<slf4j.version>1.7.21</slf4j.version>
+		<slf4j.version>1.7.22</slf4j.version>
 
 		<activemq.version>5.14.1</activemq.version>
 		<hazelcast.version>3.7.2</hazelcast.version>
-		<kafka.version>0.10.1.0</kafka.version>
+		<kafka.version>0.10.1.1</kafka.version>
 		<postgresql.jdbc.version>9.4-1206-jdbc42</postgresql.jdbc.version>
 		<cassandra.driver.version>3.1.2</cassandra.driver.version>
 
@@ -72,6 +72,8 @@
 
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<scala.version>2.12.1</scala.version>
 
 	</properties>
 
@@ -241,6 +243,14 @@
 				<groupId>com.datastax.cassandra</groupId>
 				<artifactId>cassandra-driver-core</artifactId>
 				<version>${cassandra.driver.version}</version>
+			</dependency>
+
+			<!-- Scala -->
+
+			<dependency>
+				<groupId>org.scala-lang</groupId>
+				<artifactId>scala-library</artifactId>
+				<version>${scala.version}</version>
 			</dependency>
 
 		</dependencies>
