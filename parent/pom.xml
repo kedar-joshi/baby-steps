@@ -134,7 +134,7 @@
 				<version>${lmax.version}</version>
 			</dependency>
 
-			<!-- SLF4J configuration -->
+			<!-- SLF4J -->
 
 			<dependency>
 				<groupId>org.slf4j</groupId>
@@ -230,6 +230,8 @@
 				<artifactId>kafka-clients</artifactId>
 				<version>${kafka.version}</version>
 			</dependency>
+
+			<!-- PostgreSQL -->
 
 			<dependency>
 				<groupId>org.postgresql</groupId>

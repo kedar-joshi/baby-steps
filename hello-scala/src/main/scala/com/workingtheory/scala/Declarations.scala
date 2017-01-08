@@ -62,6 +62,7 @@ object Declarations
 		val list1 = new util.ArrayList[String]
 		val list2 = List("Hi", "Hello", "How", "Are", "You")
 
+		val list3 = "Hi Hello How Are You".split(" ").toList
 
 		// Tuples
 
