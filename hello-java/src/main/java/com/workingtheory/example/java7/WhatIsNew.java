@@ -33,7 +33,7 @@ public class WhatIsNew
 		// TODO Binary Literals
 		byte b = 0b01110000; // 112 = 0x70
 		int i = 0b11111111; // 255 = 0xFF
-		int binShort = 0b1111_1111_1111_1111; // YES NUMBERS CAN BE SEPARATED BY UNDERSCORES NOW
+		int binShort = 0b1111_1111_1111_1111; // Yes. Numbers can be separated by underscores now.
 
 
 		// TODO Strings in switch
