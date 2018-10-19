@@ -10,7 +10,7 @@ object Loops
 	{
 
 		for (i <- 1 to 10) logger.info("i : {}", i)
-		for (i <- 1 to 10) logger.info("i : ${i}")
+		for (i <- 1 to 10) logger.info(s"i : $i")
 
 		val list = List("Hi", "Hello", "How", "Are", "You")
 
