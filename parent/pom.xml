@@ -49,7 +49,7 @@
         <!-- Framework version properties -->
 
         <!-- Logging -->
-        <log4j.version>2.9.0</log4j.version>
+        <log4j.version>2.13.3</log4j.version>
         <lmax.version>3.3.6</lmax.version>
         <slf4j.version>1.7.25</slf4j.version>
 
